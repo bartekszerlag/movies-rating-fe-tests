@@ -1,10 +1,5 @@
 import {defineConfig, devices} from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config();
 export default defineConfig({
     testDir: 'src/tests',
     fullyParallel: true,
@@ -13,12 +8,11 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
     reporter: 'html',
     use: {
-        headless: false,
+        headless: true,
         baseURL: 'https://moviesratingapp.netlify.app/',
         trace: 'retain-on-failure',
     },
 
-    /* Configure projects for major browsers */
     projects: [
         {
             name: 'chromium',
