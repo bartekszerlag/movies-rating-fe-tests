@@ -1,4 +1,4 @@
-import { Page } from 'playwright';
+import {Locator, Page} from 'playwright';
 
 export class MainPage {
     private readonly page: Page;
@@ -7,31 +7,31 @@ export class MainPage {
         this.page = page;
     }
 
-    getPageTitle() {
+    getPageTitle(): Locator {
         return this.page.locator('h1');
     }
 
-    getMovieTitle() {
+    getMovieTitle(): Locator {
         return this.page.locator('id=title');
     }
 
-    getMovieRating() {
+    getMovieRating(): Locator {
         return this.page.locator('id=rating');
     }
 
-    getMovieVotes() {
+    getMovieVotes(): Locator {
         return this.page.locator('id=votes');
     }
 
-    getSearchInput() {
+    getSearchInput(): Locator {
         return this.page.locator('id=input');
     }
 
-    getSearchButton() {
+    getSearchButton(): Locator {
         return this.page.locator('id=search');
     }
 
-    getPageAlert() {
+    getPageAlert(): Locator {
         return this.page.getByRole('alert');
     }
 }
