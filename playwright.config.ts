@@ -9,7 +9,7 @@ export default defineConfig({
     reporter: 'html',
     use: {
         headless: true,
-        baseURL: 'https://moviesratingapp.netlify.app/',
+        baseURL: 'http://localhost:3000',
         trace: 'retain-on-failure',
     },
 
